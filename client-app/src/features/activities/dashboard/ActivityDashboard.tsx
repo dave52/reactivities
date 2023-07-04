@@ -14,6 +14,7 @@ type Props = {
   onFormClose: () => void;
   onCreateOrEditActivity: (activity: Activity) => void;
   onDeleteActivity: (id: string) => void;
+  submitting: boolean;
 };
 
 export default function ActivityDashboard({
@@ -25,7 +26,8 @@ export default function ActivityDashboard({
   onFormOpen,
   onFormClose,
   onCreateOrEditActivity,
-  onDeleteActivity
+  onDeleteActivity,
+  submitting
 }: Props) {
   return (
     <Grid>
@@ -34,6 +36,7 @@ export default function ActivityDashboard({
           activities={activities}
           onSelectActivity={onSelectActivity}
           onDeleteActivity={onDeleteActivity}
+          submitting={submitting}
         />
       </Grid.Column>
       <Grid.Column width="6">
@@ -49,6 +52,7 @@ export default function ActivityDashboard({
             onFormClose={onFormClose}
             selectedActivity={selectedActivity}
             onCreateOrEditActivity={onCreateOrEditActivity}
+            submitting={submitting}
           />
         ) : null}
       </Grid.Column>
