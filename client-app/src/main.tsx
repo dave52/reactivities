@@ -4,11 +4,14 @@ import App from "./app/layout/App.tsx";
 import "semantic-ui-css/semantic.min.css";
 import "./app/layout/styles.css";
 import { StoreContext, store } from "./app/stores/store.ts";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <StoreContext.Provider value={store}>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </StoreContext.Provider>
   </React.StrictMode>
 );
