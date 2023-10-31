@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { Button, Icon, Item, Segment } from "semantic-ui-react";
 import { Activity } from "../../../app/models/activity";
 import { Link } from "react-router-dom";
+import { format } from "date-fns";
 
 export default function ActivityListItem(activity: Activity) {
   return (
@@ -22,7 +24,7 @@ export default function ActivityListItem(activity: Activity) {
       <Segment>
         <span>
           <Icon name="clock" />
-          {activity.date}
+          {format(activity.date!, 'dd MMM yyyy h:mm aa')}
           <Icon name="marker" />
           {activity.venue}
         </span>
